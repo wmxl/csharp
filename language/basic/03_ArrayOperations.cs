@@ -7,18 +7,6 @@ namespace basic
     public class ArrayOperations
     {
         [Fact]
-        public void should_access_certain_element_by_position()
-        {
-            var array = new[] {'a', 'e', 'i', 'o', 'u'};
-            char elementAtIndex2 = array[2];
-
-            // change "default(char)" to correct value.
-            const char expectedResult = default (char);
-
-            Assert.Equal(expectedResult, elementAtIndex2);
-        }
-
-        [Fact]
         public void should_throw_if_index_is_out_of_range()
         {
             var array = new[] { 'a', 'e', 'i', 'o', 'u' };
@@ -31,6 +19,18 @@ namespace basic
             Assert.NotEqual(typeof(Exception), expectedExceptionType);
 
             Assert.Throws(expectedExceptionType, () => array[99]);
+        }
+
+        [Fact]
+        public void should_access_certain_element_by_position()
+        {
+            var array = new[] {'a', 'e', 'i', 'o', 'u'};
+            char elementAtIndex2 = array[2];
+
+            // change "default(char)" to correct value.
+            const char expectedResult = default (char);
+
+            Assert.Equal(expectedResult, elementAtIndex2);
         }
 
         [Fact]
